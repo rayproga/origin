@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/logo.jpeg" alt="ProGrade & Asphalt Logo" /></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero services-hero">
+    <div class="hero-content">
+      <h1>Our Services</h1>
+      <p>Precision grading and asphalt solutions tailored to your property.</p>
+    </div>
+  </section>
+
+  <!-- Service Sections -->
+  <section class="section-box">
+    <div class="text">
+      <h2>Driveways</h2>
+      <p>We cut and shape new driveways, install rock, and regrade old ones for a smooth ride and proper water runoff.</p>
+    </div>
+    <img src="images/driveway.jpeg" alt="Driveway Grading" />
+  </section>
+
+  <section class="section-box">
+    <img src="images/curbgrade.jpeg" alt="Curb Grade" />
+    <div class="text">
+      <h2>Curb Grade</h2>
+      <p>From new construction to repairs, we handle curb grade with precision and care for proper water flow and durability.</p>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <div class="text">
+      <h2>Commercial Lot Grading</h2>
+      <p>We fine-grade commercial lots with existing rock or haul in new material and prep from scratch for a professional finish.</p>
+    </div>
+    <img src="images/commlot.jpeg" alt="Commercial Grading" />
+  </section>
+
+  <section class="section-box">
+    <img src="images/lotclear.jpeg" alt="Lot Leveling" />
+    <div class="text">
+      <h2>Lot Leveling</h2>
+      <p>We provide light land clearing and leveling services for small lots, prepping them for construction or landscaping.</p>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <div class="text">
+      <h2>Roadway Grading</h2>
+      <p>We grade small commercial roads and shared driveways to ensure solid structure, drainage, and a clean finish.</p>
+    </div>
+    <img src="images/roadway.jpeg" alt="Roadway Grading" />
+  </section>
+
+  <section class="section-box">
+    <img src="images/pavedriveway.jpeg" alt="Asphalt Work" />
+    <div class="text">
+      <h2>Asphalt Repairs & Installation</h2>
+      <p>We handle everything from patch repairs to new asphalt installs for driveways and commercial lots. Quality work, every time.</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <div class="motto-banner">
+    Ready to get started? <a href="contact.html" class="btn">Contact us for a quote</a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&uarr;</button>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+
+      const backToTop = document.getElementById("backToTop");
+      window.onscroll = () => {
+        backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+      };
+      backToTop.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    });
+  </script>
+
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Asphalt. All rights reserved.</p>
+  </footer>
+</body>
+</html>

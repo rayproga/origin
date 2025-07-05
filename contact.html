@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/logo.jpeg" alt="ProGrade & Asphalt Logo"></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero contact-hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear about your project. Let’s build something great together.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <h2>We would love to be part of your next project! Fill out this form and we’ll reply ASAP.</h2>
+
+    <form class="contact-form" method="POST" action="https://formspree.io/f/xanjpqkk" onsubmit="handleSubmit(event)">
+      <div class="input-group">
+        <i class="material-icons">person</i>
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+
+      <div class="input-group">
+        <i class="material-icons">email</i>
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+
+      <div class="input-group">
+        <i class="material-icons">phone</i>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required />
+      </div>
+
+      <div class="input-group">
+        <i class="material-icons">message</i>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+      </div>
+
+      <!-- Honeypot for spam bots -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="thank-you-message" id="thankYouMessage">
+      ✅ Thank you! Your message has been sent. We’ll get back to you shortly.
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&uarr;</button>
+
+  <!-- Scripts -->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      const form = event.target;
+      const thankYou = document.getElementById("thankYouMessage");
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        } else {
+          alert("There was an issue sending your message. Please try again.");
+        }
+      }).catch(error => {
+        alert("Something went wrong. Please try again later.");
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+
+      const backToTop = document.getElementById("backToTop");
+      window.onscroll = () => {
+        backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+      };
+      backToTop.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    });
+  </script>
+
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Asphalt. All rights reserved.</p>
+  </footer>
+</body>
+</html>
