@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <style>
+    .swiper {
+      width: 100%;
+      max-width: 900px;
+      height: 500px;
+      margin: 40px auto;
+    }
+
+    .swiper-wrapper {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/logo.jpeg" alt="ProGrade & Asphalt Logo" /></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero home-hero">
+    <div class="hero-content">
+      <h1>ProGrade & Asphalt</h1>
+      <p>Built on Experience. Driven by Precision.</p>
+      <a href="contact.html" class="btn glow">Free Quote</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-box" id="about">
+    <img src="images/about.jpeg" alt="About Us" />
+    <div class="text">
+      <h2>About Us</h2>
+      <p>We’re a family-run team with decades of experience shaping land and laying the groundwork for what comes next.</p>
+      <a href="about.html" class="btn glow">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="section-box" id="services">
+    <img src="images/services.jpeg" alt="Our Services" />
+    <div class="text">
+      <h2>Our Services</h2>
+      <p>Precision grading and asphalt services built on pride and skill.</p>
+      <a href="services.html" class="btn glow">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+<section id="gallery" class="section-box">
+  <h2>Project Gallery</h2>
+  <div class="simple-gallery">
+    <img src="images/gal1_optimized.jpg" alt="Gallery Image 1" />
+    <img src="images/gal2_optimized.jpg" alt="Gallery Image 2" />
+    <img src="images/gal3_optimized.jpg" alt="Gallery Image 3" />
+  </div>
+  <a href="gallery.html" class="btn glow">View Full Gallery</a>
+</section>
+
+
+  <!-- Contact Section -->
+  <section class="info-box" id="contact">
+    <div class="text">
+      <h2>Get in Touch</h2>
+      <p>Email: <a href="mailto:owner@pro4ga.com">owner@pro4ga.com</a> | Phone: <a href="tel:7702760873">770-276-0873</a></p>
+      <a href="contact.html" class="btn glow">Request Quote</a>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&uarr;</button>
+
+  <!-- ... HEAD remains unchanged ... -->
+
+<!-- Scripts -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const galleryImages = document.querySelectorAll('#gallery img');
+    let loadedCount = 0;
+
+    const checkAndInitSwiper = () => {
+      loadedCount++;
+      if (loadedCount === galleryImages.length) {
+        // Give the layout a short pause to settle before init
+        setTimeout(() => {
+          new Swiper('.swiper', {
+            loop: true,
+            slidesPerView: 1,
+            preloadImages: true,
+            updateOnImagesReady: true,
+            watchSlidesProgress: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true
+            },
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev'
+            }
+          });
+        }, 150); // Delay helps prevent broken loop
+      }
+    };
+
+    // Load tracking
+    galleryImages.forEach(img => {
+      if (img.complete) {
+        checkAndInitSwiper();
+      } else {
+        img.addEventListener('load', checkAndInitSwiper);
+        img.addEventListener('error', checkAndInitSwiper);
+      }
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    navToggle?.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Back to Top functionality
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    backToTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  });
+</script>
+
+
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Asphalt. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/logo.jpeg" alt="ProGrade & Asphalt Logo" /></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero about-hero">
+    <div class="hero-content">
+      <h1>Our Story</h1>
+      <p>From humble beginnings to building futures — this is how ProGrade & Asphalt was born.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-box">
+    <div class="text">
+      <h2>Early Days</h2>
+      <p>I started in 2002 as an apprentice in the Operating Engineers and began working under my dad on a paving crew. I started at the bottom, shoveling more asphalt than I care to remember — learning paving from the ground up and what it takes to provide a good product. I mastered the role of a shovel man and moved up to raking and fixing joints to ensure a seamless mat.</p>
+      <p>Although I got occasional time on equipment, most of my experience came from hard work on the ground. Eventually, I worked my way up to rubber tire roller, then steel drum roller, and occasionally paver operator. They were long, hot days, but over the course of my three-year apprenticeship, I learned everything from groundwork to finished product. I became a full journeyman and continued my career for the next 10 years in Las Vegas, NV.</p>
+    </div>
+    <img src="images/about-work.jpeg" alt="Grading Equipment" />
+  </section>
+
+  <section class="section-box">
+    <img src="images/about-team.jpeg" alt="ProGrade Team" />
+    <div class="text">
+      <h2>New Roots</h2>
+      <p>In 2012, I moved to Georgia with my wife and four kids, following a rough economy and chasing a brighter future. I began working mid-2012 with a local asphalt business here in Georgia. After a year of paving, I began taking on small grading jobs — prepping sites for asphalt. It wasn’t long before grading became my main focus.</p>
+      <p>I taught myself how to run a motor grader and started completing full jobs solo. Within my second year, I was working full-time as a grader and eventually became one of four grading foremen. I stayed with that company until 2025, building experience, respect, and a reputation for getting it right the first time.</p>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <div class="text">
+      <h2>Vision</h2>
+      <p>I launched ProGrade & Asphalt in 2025 with a mission to build from a small family-owned business into a trusted and competitive name in grading and paving. I want to create something my family and I can be proud of — something that can grow with us and be passed on for generations.</p>
+      <blockquote>“I pride myself on being honest and fair — no cutting corners.”</blockquote>
+      <p>From driveways to commercial lots, we treat every job like it matters — because it does.</p>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <div class="text">
+      <h2>Timeline</h2>
+      <ul class="timeline">
+        <li><strong>2002</strong> — Began apprenticeship in Las Vegas</li>
+        <li><strong>2012</strong> — Moved to Georgia</li>
+        <li><strong>2013</strong> — Started working asphalt in GA</li>
+        <li><strong>2014–2025</strong> — Grading foreman</li>
+        <li><strong>2025</strong> — ProGrade & Asphalt launched</li>
+      </ul>
+
+      <h3>Testimonials</h3>
+      <blockquote>“Raymond taught me how to grade and gave me a chance to grow.” – Anthony</blockquote>
+      <blockquote>“Looking forward to this new adventure with him.” – Michael</blockquote>
+
+      <h3>Our Mission</h3>
+      <p>We’re committed to giving back, helping others learn a trade, and supporting those in need. It’s about more than business — it’s about building community.</p>
+    </div>
+  </section>
+
+  <div class="cta">
+    <a href="contact.html" class="btn glow">Get a Free Quote</a>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&uarr;</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+
+      const backToTop = document.getElementById("backToTop");
+      window.onscroll = () => {
+        backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+      };
+      backToTop.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      };
+    });
+  </script>
+
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Aspha
