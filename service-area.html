@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Areas | ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWF39LKBC6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RWF39LKBC6');
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images/logo.jpeg" alt="ProGrade & Asphalt Logo" /></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Areas We Serve</h1>
+      <p>Proudly grading and paving across Northwest Georgia</p>
+    </div>
+  </section>
+
+  <section class="section-box">
+    <div class="text">
+      <h2>Primary Service Areas</h2>
+      <p>ProGrade & Asphalt offers residential and commercial grading, driveway installation, and site preparation services throughout the following cities and counties in Northwest Georgia:</p>
+
+      <h3>📍 Cities:</h3>
+      <ul>
+        <li>Rockmart</li>
+        <li>Dallas</li>
+        <li>Cedartown</li>
+        <li>Hiram</li>
+        <li>Cartersville</li>
+        <li>Rome</li>
+        <li>Villa Rica</li>
+        <li>Taylorsville</li>
+        <li>Aragon</li>
+        <li>Silver Creek</li>
+        <li>Buchanan</li>
+        <li>Temple</li>
+        <li>Acworth</li>
+        <li>Powder Springs</li>
+        <li>Woodstock</li>
+        <li>Waco</li>
+        <li>Lindale</li>
+      </ul>
+
+      <h3>🗺️ Counties:</h3>
+      <ul>
+        <li>Polk County</li>
+        <li>Paulding County</li>
+        <li>Floyd County</li>
+        <li>Bartow County</li>
+        <li>Haralson County</li>
+        <li>Cobb County</li>
+        <li>Carroll County</li>
+        <li>Douglas County</li>
+        <li>Cherokee County</li>
+      </ul>
+
+      <p>We may travel further depending on the size and scope of your project. Please <a href="contact.html">reach out</a> to request a custom quote or check availability in your area.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Asphalt. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
