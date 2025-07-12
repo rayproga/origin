@@ -24,4 +24,8 @@
     <loc>https://www.pro4ga.com/store.html</loc>
     <priority>0.60</priority>
   </url>
+  <url>
+  <loc>https://www.pro4ga.com/service-area.html</loc>
+  <priority>0.70</priority>
+</url>
 </urlset>
