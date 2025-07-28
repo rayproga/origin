@@ -610,3 +610,22 @@ img {
   color: #333;
   font-size: 1rem;
 }
+
+.protips-hero {
+  background-image: url('../images/protips-hero-banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .protips-hero {
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #000; /* fallback color */
+    height: 300px;
+  }
+}
