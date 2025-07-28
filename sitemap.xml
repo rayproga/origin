@@ -25,7 +25,27 @@
     <priority>0.60</priority>
   </url>
   <url>
-  <loc>https://www.pro4ga.com/service-area.html</loc>
-  <priority>0.70</priority>
-</url>
+    <loc>https://www.pro4ga.com/service-area.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.pro4ga.com/protips.html</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.pro4ga.com/protips/cheap-driveway-scams.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.pro4ga.com/protips/build-long-lasting-driveway.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.pro4ga.com/protips/driveway-base-materials-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://www.pro4ga.com/protips/licensed-insured-contractor.html</loc>
+    <priority>0.70</priority>
+  </url>
 </urlset>

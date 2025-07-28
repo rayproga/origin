@@ -582,3 +582,31 @@ img {
   margin: 30px auto;
   border-radius: 12px;
 }
+
+/* === Blog List Styling === */
+.blog-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog-list li {
+  margin-bottom: 10px;
+}
+
+.blog-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.blog-list a:hover {
+  color: #008c8c;
+  text-decoration: underline;
+}
+
+.blog-list p {
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1rem;
+}

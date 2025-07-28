@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProTips | ProGrade & Asphalt</title>
+  <link rel="icon" type="image/x-icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWF39LKBC6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RWF39LKBC6');
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="../index.html"><img src="../images/logo.jpeg" alt="ProGrade & Asphalt Logo" /></a>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <ul class="nav-menu">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../protips/" class="active">ProTips</a></li>
+      <li><a href="../store.html">Store</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero home-hero">
+    <div class="hero-content">
+      <h1>ProTips</h1>
+      <p>Real Advice. No Nonsense. Just Solid Groundwork.</p>
+    </div>
+  </section>
+
+ <!-- Blog List Section -->
+<section class="section-box">
+  <div class="text">
+    <h2>Latest Posts</h2>
+    <ul class="blog-list">
+      <li>
+        <a href="cheap-driveway-scams.html">Don’t Get Scammed — Watch Out for Cheap Driveway Deals</a>
+        <p>Learn how to spot and avoid common asphalt scams from drive-by contractors.</p>
+      </li>
+      <li>
+        <a href="build-long-lasting-driveway.html">What It Takes to Build a Long-Lasting Driveway</a>
+        <p>Understand the process behind durable driveway installation, from prep to asphalt.</p>
+      </li>
+      <li>
+        <a href="driveway-base-materials-guide.html">Choosing the Right Base: Gravel, GAB, Crush & Run — What’s Best for Your Driveway?</a>
+        <p>We break down the most common driveway base materials and which is best for your project.</p>
+      </li>
+      <li>
+        <a href="licensed-insured-contractor.html">Why Hiring a Licensed & Insured Contractor Matters</a>
+        <p>Protect your investment — here’s why credentials, insurance, and accountability matter when hiring.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to top">&uarr;</button>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ProGrade & Asphalt, Rockmart GA. Real knowledge, no shortcuts.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navToggle = document.getElementById('nav-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      navToggle?.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+
+      document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+
+    // Back to Top functionality
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      backToTop.style.display = window.scrollY > 200 ? "block" : "none";
+    };
+    backToTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>
